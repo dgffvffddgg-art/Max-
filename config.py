@@ -10,14 +10,14 @@ load_dotenv()
 # ===== الإعدادات الأساسية =====
 BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 MUTE_DURATION_MINUTES = int(os.getenv("MUTE_DURATION_MINUTES", "60"))
-WARNING_MESSAGE_LIFETIME = int(os.getenv("WARNING_MESSAGE_LIFETIME", "15"))
+WARNING_MESSAGE_LIFETIME = int(os.getenv("WARNING_MESSAGE_LIFETIME", "25"))
 MAX_WARNINGS = 3  # عدد التحذيرات قبل الكتم
 
 # ===== إعدادات Google Gemini (للتحليل الذكي للرسائل) =====
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 # عدد آخر الرسائل اللي البوت بيشوفها كسياق عشان يحدد لو فيه "جدال/مشاحنة" فعلاً
-CONTEXT_MESSAGES_COUNT = 6
+CONTEXT_MESSAGES_COUNT = 20
 # تفعيل/تعطيل التحليل الذكي (لو الـ API key مش متظبط، البوت يشتغل بالفلتر التقليدي بس)
 AI_MODERATION_ENABLED = bool(GEMINI_API_KEY)
 
